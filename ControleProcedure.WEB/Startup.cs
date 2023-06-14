@@ -32,6 +32,7 @@ namespace ControleProcedure.WEB
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
             }
             else
             {
