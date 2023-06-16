@@ -9,7 +9,7 @@
 <p>
     <a class="btn btn-primary" asp-action="Create"> Novo Cliente</a>
 </p>
-<table class="table">
+<table id="myTable" class="table">
     <thead>
         <tr>
             <th>
@@ -18,7 +18,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.CliNome)
             </th>
-            
+
             <th>
                 @Html.DisplayNameFor(model => model.CliTelefoneCelular)
             </th>
@@ -38,7 +38,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.CliNome)
                 </td>
-                
+
                 <td>
                     @Html.DisplayFor(modelItem => item.CliTelefoneCelular)
                 </td>
@@ -54,3 +54,20 @@
         }
     </tbody>
 </table>
+
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+
+
+            $('#myTable').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json"
+                }
+            });
+
+        });
+    </script>
+
+}
