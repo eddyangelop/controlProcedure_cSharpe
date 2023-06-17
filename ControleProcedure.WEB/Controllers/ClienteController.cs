@@ -1,6 +1,7 @@
 ﻿using ControleProcedure.DATA.Models;
 using ControleProcedure.DATA.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Collections.Generic;
 
 namespace ControleProcedure.WEB.Controllers
@@ -18,5 +19,19 @@ namespace ControleProcedure.WEB.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Create(Cliente model)
+        {
+            if (!ModelState.IsValid) 
+            {
+                return View();
+            }
+
+            oClienteService.oRepositoryCliente.Incluir(model);
+
+            return RedirectToAction("Index");
+        }
+
     }
 }
