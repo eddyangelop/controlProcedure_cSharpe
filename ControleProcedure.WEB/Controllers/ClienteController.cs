@@ -33,5 +33,11 @@ namespace ControleProcedure.WEB.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Details(int id)
+        {
+            Cliente oCliente = oClienteService.oRepositoryCliente.SelecionarPk(id);
+            return View(oCliente);
+        }
+
     }
 }
