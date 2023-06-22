@@ -23,7 +23,7 @@ namespace ControleProcedure.WEB.Controllers
         [HttpPost]
         public IActionResult Create(Cliente model)
         {
-            if (!ModelState.IsValid) 
+            if (!ModelState.IsValid)
             {
                 return View();
             }
@@ -39,7 +39,7 @@ namespace ControleProcedure.WEB.Controllers
             return View(oCliente);
         }
 
-        public IActionResult Edit(int id) 
+        public IActionResult Edit(int id)
         {
             Cliente oCliente = oClienteService.oRepositoryCliente.SelecionarPk(id);
             return View(oCliente);
@@ -54,6 +54,13 @@ namespace ControleProcedure.WEB.Controllers
 
             return RedirectToAction("Details", new { id });
         }
+
+        public IActionResult Delete(int id)
+        {
+            oClienteService.oRepositoryCliente.Excluir(id);
+            return RedirectToAction("Index");
+        }
+
 
     }
 }
