@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -19,6 +20,7 @@ namespace ControleProcedure.DATA.Models
         public int Id { get; set; }
         [Column("cliCPF")]
         [StringLength(14)]
+        [DisplayName("CPF")]
         public string CliCpf { get; set; }
         [Column("cliNome")]
         [StringLength(200)]
