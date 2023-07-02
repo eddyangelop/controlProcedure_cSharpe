@@ -18,30 +18,45 @@ namespace ControleProcedure.DATA.Models
         [Key]
         [Column("id")]
         public int Id { get; set; }
+
         [Column("cliCPF")]
         [StringLength(14)]
         [DisplayName("CPF")]
         public string CliCpf { get; set; }
+
         [Column("cliNome")]
         [StringLength(200)]
+        [DisplayName("Nome")]
         public string CliNome { get; set; }
+
         [Column("cliEndereco")]
         [StringLength(200)]
+        [DisplayName("Endereço")]
         public string CliEndereco { get; set; }
+
         [Column("cliCidade")]
         [StringLength(100)]
+        [DisplayName("Cidade")]
         public string CliCidade { get; set; }
+
         [Column("cliBairro")]
         [StringLength(100)]
+        [DisplayName("Bairro")]
         public string CliBairro { get; set; }
+
         [Column("cliNumero")]
         [StringLength(50)]
+        [DisplayName("Numero")]
         public string CliNumero { get; set; }
+
         [Column("cliTelefoneCelular")]
         [StringLength(14)]
+        [DisplayName("Celular")]
         public string CliTelefoneCelular { get; set; }
+
         [Column("cliTelefoneFixo")]
         [StringLength(13)]
+        [DisplayName("Telefone fixo")]
         public string CliTelefoneFixo { get; set; }
 
         [InverseProperty("CpIdClienteNavigation")]
